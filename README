@@ -46,3 +46,10 @@ Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+
+My Patches
+----------
+This is in the order that I patched everything:
+- https://dwm.suckless.org/patches/alwayscenter/
+- https://dwm.suckless.org/patches/fullgaps/
