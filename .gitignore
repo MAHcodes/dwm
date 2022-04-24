@@ -1,0 +1,4 @@
+*.txt
+dwm
+*.o
+config.h
