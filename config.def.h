@@ -7,9 +7,9 @@ static const unsigned int gappx     = 10;       /* default gap between windows i
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const double activeopacity   = 1.0f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
-static const double inactiveopacity = 0.75f;   /* Window opacity when it's inactive (0 <= opacity <= 1) */
-static       Bool bUseOpacity       = True;     /* Starts with opacity on any unfocused windows */
+static const double activeopacity   = 0.9f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
+static const double inactiveopacity = 0.7f;   /* Window opacity when it's inactive (0 <= opacity <= 1) */
+static       Bool bUseOpacity       = False;     /* Starts with opacity on any unfocused windows */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
 static const char col_gray1[]       = "#1d2021";
@@ -82,6 +82,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = pulsemixercmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = ncmpcppcmd } },
+  { MODKEY,                       XK_w,      spawn,          SHCMD("nitrogen --set-zoom-fill --random ~/Pictures/")},
 	{ MODKEY,                       XK_s,      spawndefault,   {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
