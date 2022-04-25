@@ -52,7 +52,6 @@ My Patches
 ----------
 This is in the order that I patched everything:
 - https://dwm.suckless.org/patches/alwayscenter/
-- https://dwm.suckless.org/patches/fullgaps/
 - https://dwm.suckless.org/patches/actualfullscreen/
-- https://dwm.suckless.org/patches/ru_gaps/
 - https://dwm.suckless.org/patches/default_tag_apps/
+- https://dwm.suckless.org/patches/functionalgaps/
