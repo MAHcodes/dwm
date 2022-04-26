@@ -40,8 +40,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "mpv",      NULL,       NULL,       5,            0,           -1 },
+	{ "firefoxdeveloperedition",  NULL,   NULL,         1 << 1,       0,           -1 },
+	{ "TelegramDesktop",  NULL,   NULL,         1 << 3,       0,           -1 },
 	{ NULL,       "floating", NULL,       0,            1,           -1 },
 };
 
@@ -64,6 +64,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define SECMODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -88,6 +89,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = pulsemixercmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = ncmpcppcmd } },
   { MODKEY,                       XK_w,      spawn,          SHCMD("nitrogen --set-zoom-fill --random ~/Pictures/")},
+  { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("hsetroot -solid '#000000'")},
 	{ MODKEY,                       XK_s,      spawndefault,   {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
@@ -110,6 +112,22 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
+	{ MODKEY|ShiftMask,             XK_j,      moveresize,     {.v = "0x 25y 0w 0h" } },
+	{ MODKEY|ShiftMask,             XK_k,      moveresize,     {.v = "0x -25y 0w 0h" } },
+	{ MODKEY|ShiftMask,             XK_l,      moveresize,     {.v = "25x 0y 0w 0h" } },
+	{ MODKEY|ShiftMask,             XK_h,      moveresize,     {.v = "-25x 0y 0w 0h" } },
+	{ MODKEY|SECMODKEY,             XK_j,      moveresize,     {.v = "0x 0y 0w 25h" } },
+	{ MODKEY|SECMODKEY,             XK_k,      moveresize,     {.v = "0x 0y 0w -25h" } },
+	{ MODKEY|SECMODKEY,             XK_l,      moveresize,     {.v = "0x 0y 25w 0h" } },
+	{ MODKEY|SECMODKEY,             XK_h,      moveresize,     {.v = "0x 0y -25w 0h" } },
+	{ MODKEY|ControlMask,           XK_k,      moveresizeedge, {.v = "t"} },
+	{ MODKEY|ControlMask,           XK_j,      moveresizeedge, {.v = "b"} },
+	{ MODKEY|ControlMask,           XK_h,      moveresizeedge, {.v = "l"} },
+	{ MODKEY|ControlMask,           XK_l,      moveresizeedge, {.v = "r"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_k,      moveresizeedge, {.v = "T"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_j,      moveresizeedge, {.v = "B"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_h,      moveresizeedge, {.v = "L"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_l,      moveresizeedge, {.v = "R"} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
