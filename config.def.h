@@ -78,16 +78,15 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *pulsemixercmd[]  = { "alacritty", "--class", "floating", "-e", "pulsemixer" };
-static const char *ncmpcppcmd[]  = { "alacritty", "--class", "floating", "-e", "ncmpcpp" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = pulsemixercmd } },
-	{ MODKEY,                       XK_n,      spawn,          {.v = ncmpcppcmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("alacritty --class floating -e pulsemixer") },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("alacritty --class floating -e ncmpcpp") },
+	{ MODKEY,                       XK_backslash,spawn,        SHCMD("alacritty --class floating") },
   { MODKEY,                       XK_w,      spawn,          SHCMD("nitrogen --set-zoom-fill --random ~/Pictures/")},
   { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("hsetroot -solid '#000000'")},
 	{ MODKEY,                       XK_s,      spawndefault,   {0} },
@@ -102,9 +101,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,                       XK_a,      toggleopacity,  {0} },
+	{ MODKEY|ShiftMask,             XK_a,      toggleopacity,  {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
@@ -141,6 +140,8 @@ static Key keys[] = {
   { 0,                            XK_Print,  spawn,          SHCMD("scrot ~/%Y-%m-%d-%T-screenshot.png")},
   { MODKEY,                       XK_Print,  spawn,          SHCMD("flameshot gui")},
   { MODKEY|ShiftMask,             XK_Print,  spawn,          SHCMD("killall flameshot")},
+  { MODKEY,                       XK_Escape, spawn,          SHCMD("slock")},
+  { MODKEY|ShiftMask,             XK_Escape, spawn,          SHCMD("shutdown -h now")},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
