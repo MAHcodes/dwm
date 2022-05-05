@@ -17,11 +17,11 @@ static const double inactiveopacity = 0.6f;   /* Window opacity when it's inacti
 static       Bool bUseOpacity       = False;     /* Starts with opacity on any unfocused windows */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
-static const char col_gray1[]       = "#1d2021";
-static const char col_gray2[]       = "#1d2021";
-static const char col_gray3[]       = "#a89984";
-static const char col_gray4[]       = "#1d2021";
-static const char col_cyan[]        = "#a89984";
+static const char col_gray1[]       = "#1d1f21";
+static const char col_gray2[]       = "#1d1f21";
+static const char col_gray3[]       = "#c5c8c6";
+static const char col_gray4[]       = "#1d1f21";
+static const char col_cyan[]        = "#c5c8c6";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -129,8 +129,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_l,      moveresizeedge, {.v = "R"} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+	{ MODKEY|SECMODKEY,             XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY|SECMODKEY,             XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
