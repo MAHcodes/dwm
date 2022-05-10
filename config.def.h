@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const int startwithgaps	    = 0;    	 /* 1 means gaps are used by default */
+static const int startwithgaps	    = 1;    	 /* 1 means gaps are used by default */
 static const unsigned int gappx     = 10;       /* default gap between windows in pixels */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -14,7 +14,7 @@ static const int showbar            = 0;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const double activeopacity   = 1.0f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity = 0.6f;   /* Window opacity when it's inactive (0 <= opacity <= 1) */
-static       Bool bUseOpacity       = False;     /* Starts with opacity on any unfocused windows */
+static       Bool bUseOpacity       = True;     /* Starts with opacity on any unfocused windows */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
 static const char col_gray1[]       = "#1d1f21";
@@ -31,7 +31,6 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *defaulttagapps[] = { "alacritty", "firefox-developer-edition", "alacritty", "telegram-desktop", NULL, NULL, NULL, NULL, NULL };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -58,8 +57,6 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
 };
 
 /* key definitions */
@@ -89,7 +86,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_backslash,spawn,        SHCMD("alacritty --class floating") },
   { MODKEY,                       XK_w,      spawn,          SHCMD("nitrogen --set-zoom-fill --random ~/Pictures/")},
   { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("hsetroot -solid '#000000'")},
-	{ MODKEY,                       XK_s,      spawndefault,   {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -106,8 +102,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY|ShiftMask,             XK_c,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
