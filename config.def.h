@@ -17,11 +17,11 @@ static const double inactiveopacity = 0.6f;   /* Window opacity when it's inacti
 static       Bool bUseOpacity       = True;     /* Starts with opacity on any unfocused windows */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
-static const char col_gray1[]       = "#1d1f21";
-static const char col_gray2[]       = "#1d1f21";
-static const char col_gray3[]       = "#c5c8c6";
-static const char col_gray4[]       = "#1d1f21";
-static const char col_cyan[]        = "#c5c8c6";
+static const char col_gray1[]       = "#2e3440";
+static const char col_gray2[]       = "#2e3440";
+static const char col_gray3[]       = "#81a1c1";
+static const char col_gray4[]       = "#2e3440";
+static const char col_cyan[]        = "#81a1c1";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -41,6 +41,8 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "firefoxdeveloperedition",  NULL,   NULL,         1 << 1,       0,           -1 },
 	{ "TelegramDesktop",  NULL,   NULL,         1 << 3,       0,           -1 },
+	{ "notion-app-enhanced",  NULL,   NULL,         1 << 6,       0,           -1 },
+	{ "Mailspring",  NULL,   NULL,         1 << 7,       0,           -1 },
 	{ NULL,       "floating", NULL,       0,            1,           -1 },
 };
 
@@ -84,8 +86,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("alacritty --class floating -e pulsemixer") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("alacritty --class floating -e ncmpcpp") },
 	{ MODKEY,                       XK_backslash,spawn,        SHCMD("alacritty --class floating") },
-  { MODKEY,                       XK_w,      spawn,          SHCMD("nitrogen --set-zoom-fill --random ~/Pictures/")},
-  { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("hsetroot -solid '#000000'")},
+  { MODKEY,                       XK_w,      spawn,          SHCMD("nitrogen --set-zoom-fill --random ~/Pictures/Wallpapers/Nord")},
+  { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("hsetroot -solid '#2e3440'")},
+  { MODKEY,                       XK_r,      spawn,          SHCMD("rofi -show drun -config ~/.config/rofi/rofidmenu.rasi")},
+  { MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("firefox-developer-edition")},
+  { MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("pcmanfm")},
+  { MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("notion-app-enhanced")},
+  { MODKEY,                       XK_e,      spawn,          SHCMD("mailspring")},
+  { MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("notify-send -t 3500 \"$(date '+%a %d %b %Y, %H:%M')\" --icon=none") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
