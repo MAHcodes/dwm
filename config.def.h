@@ -86,7 +86,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("alacritty --class floating -e pulsemixer") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("alacritty --class floating -e ncmpcpp") },
 	{ MODKEY,                       XK_backslash,spawn,        SHCMD("alacritty --class floating") },
-  { MODKEY,                       XK_w,      spawn,          SHCMD("nitrogen --set-zoom-fill --random ~/Pictures/Wallpapers/Nord")},
+  { MODKEY,                       XK_F5,      spawn,          SHCMD("feh --bg-fill --randomize --recursive ~/Pictures/Wallpapers/")},
   { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("hsetroot -solid '#2e3440'")},
   { MODKEY,                       XK_r,      spawn,          SHCMD("rofi -show drun -config ~/.config/rofi/rofidmenu.rasi")},
   { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("rofi -show emoji -config ~/.config/rofi/rofidmenu.rasi")},
