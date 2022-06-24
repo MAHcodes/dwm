@@ -93,7 +93,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("rofi -show calc -config ~/.config/rofi/rofidmenu.rasi")},
   { MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("~/.config/rofi/scripts/rofi-beats")},
   { MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("firefox-developer-edition")},
-  { MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("pcmanfm")},
+  { MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("thunar")},
   { MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("notion-app-enhanced")},
   { MODKEY,                       XK_e,      spawn,          SHCMD("mailspring")},
   { MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("notify-send -t 3500 \"$(date '+%a %d %b %Y, %H:%M')\" --icon=none") },
@@ -126,11 +126,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
-  { 0,                            XK_Print,  spawn,          SHCMD("scrot ~/%Y-%m-%d-%T-screenshot.png")},
+  { 0,                            XK_Print,  spawn,          SHCMD("scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png")},
   { MODKEY,                       XK_Print,  spawn,          SHCMD("flameshot gui")},
   { MODKEY|ShiftMask,             XK_Print,  spawn,          SHCMD("killall flameshot")},
   { MODKEY,                       XK_Escape, spawn,          SHCMD("slock")},
-  { MODKEY|ShiftMask,             XK_Escape, spawn,          SHCMD("shutdown -h now")},
+  { MODKEY|ShiftMask,             XK_Caps_Lock,spawn,        SHCMD("shutdown -h now")},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
