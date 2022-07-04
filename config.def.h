@@ -53,7 +53,7 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname };
+static const char *scratchpadcmd[] = { "kitty", "--title", scratchpadname };
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -77,16 +77,16 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("alacritty --class floating -e pulsemixer") },
-	{ MODKEY,                       XK_n,      spawn,          SHCMD("alacritty --class floating -e ncmpcpp") },
-	{ MODKEY,                       XK_backslash,spawn,        SHCMD("alacritty --class floating") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("kitty --class floating --override=background_opacity=0 -e pulsemixer") },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("kitty --class floating --override=background_opacity=0 -e ncmpcpp") },
+	{ MODKEY,                       XK_backslash,spawn,        SHCMD("kitty --class floating --override=background_opacity=0") },
   { MODKEY,                       XK_F5,      spawn,          SHCMD("feh --bg-fill --randomize --recursive ~/Pictures/cars/")},
   { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("hsetroot -solid '#000000'")},
   { MODKEY,                       XK_o,      spawn,          SHCMD("rofi -show drun -config ~/.config/rofi/rofidmenu.rasi")},
