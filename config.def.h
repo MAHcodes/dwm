@@ -3,7 +3,7 @@
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const int startwithgaps	    = 1;    	 /* 1 means gaps are used by default */
-static const unsigned int gappx     = 10;       /* default gap between windows in pixels */
+static const unsigned int gappx     = 15;       /* default gap between windows in pixels */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
@@ -43,6 +43,7 @@ static const Rule rules[] = {
 	{ "TelegramDesktop",  NULL,   NULL,         1 << 3,       0,           -1 },
 	{ "notion-app-enhanced",  NULL,   NULL,         1 << 6,       0,           -1 },
 	{ "Mailspring",  NULL,   NULL,         1 << 7,       0,           -1 },
+	{ "Uget-gtk",  NULL,   NULL,         1 << 8,       0,           -1 },
 	{ NULL,       "floating", NULL,       0,            1,           -1 },
 };
 
@@ -86,16 +87,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("alacritty --class floating -e pulsemixer") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("alacritty --class floating -e ncmpcpp") },
 	{ MODKEY,                       XK_backslash,spawn,        SHCMD("alacritty --class floating") },
-  { 0,                            XK_F5,      spawn,          SHCMD("feh --bg-fill --randomize --recursive ~/Pictures/cars/")},
+  { MODKEY,                       XK_F5,      spawn,          SHCMD("feh --bg-fill --randomize --recursive ~/Pictures/cars/")},
   { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("hsetroot -solid '#000000'")},
   { MODKEY,                       XK_o,      spawn,          SHCMD("rofi -show drun -config ~/.config/rofi/rofidmenu.rasi")},
   { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("rofi -show emoji -config ~/.config/rofi/rofidmenu.rasi")},
-  { MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("rofi -show calc -config ~/.config/rofi/rofidmenu.rasi")},
   { MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("~/.config/rofi/scripts/rofi-beats")},
   { MODKEY,                       XK_c,      spawn,          SHCMD("~/.bin/eyedropper")},
   { MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("firefox-developer-edition")},
   { MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("thunar")},
-  { MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("notion-app-enhanced")},
   { MODKEY,                       XK_e,      spawn,          SHCMD("mailspring")},
   { MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("notify-send -t 3500 \"$(date '+%a %d %b %Y, %H:%M')\" --icon=none") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -113,7 +112,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
