@@ -41,6 +41,7 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "firefoxdeveloperedition",  NULL,   NULL,         1 << 1,       0,           -1 },
 	{ "TelegramDesktop",  NULL,   NULL,         1 << 3,       0,           -1 },
+	{ "figma-linux",  NULL,   NULL,         1 << 4,       0,           -1 },
 	{ "notion-app-enhanced",  NULL,   NULL,         1 << 6,       0,           -1 },
 	{ "Mailspring",  NULL,   NULL,         1 << 7,       0,           -1 },
 	{ "Uget-gtk",  NULL,   NULL,         1 << 8,       0,           -1 },
@@ -89,8 +90,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_backslash,spawn,        SHCMD("kitty --class floating --override=background_opacity=0") },
   { MODKEY,                       XK_F5,      spawn,          SHCMD("feh --bg-fill --randomize --recursive ~/Pictures/cars/")},
   { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("hsetroot -solid '#000000'")},
-  { MODKEY,                       XK_o,      spawn,          SHCMD("rofi -show drun -config ~/.config/rofi/rofidmenu.rasi")},
-  { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("rofi -show emoji -config ~/.config/rofi/rofidmenu.rasi")},
+  { MODKEY,                       XK_o,      spawn,          SHCMD("rofi -show drun")},
+  { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("rofi -show emoji")},
   { MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("~/.config/rofi/scripts/rofi-beats")},
   { MODKEY,                       XK_c,      spawn,          SHCMD("~/.bin/eyedropper")},
   { MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("firefox-developer-edition")},
@@ -129,7 +130,7 @@ static Key keys[] = {
   { 0,                            XK_Print,  spawn,          SHCMD("scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png")},
   { MODKEY,                       XK_Print,  spawn,          SHCMD("flameshot gui")},
   { MODKEY|ShiftMask,             XK_Print,  spawn,          SHCMD("killall flameshot")},
-  { MODKEY,                       XK_Escape, spawn,          SHCMD("slock")},
+  { MODKEY,                       XK_Caps_Lock,spawn,        SHCMD("slock")},
   { MODKEY|ShiftMask,             XK_Caps_Lock,spawn,        SHCMD("shutdown -h now")},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
