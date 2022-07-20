@@ -15,8 +15,8 @@ static const int topbar             = 1;     /* 0 means bottom bar */
 static const double activeopacity   = 1.0f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity = 0.6f;   /* Window opacity when it's inactive (0 <= opacity <= 1) */
 static       Bool bUseOpacity       = True;     /* Starts with opacity on any unfocused windows */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=10" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
+static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=13" };
+static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=13";
 static const char col_gray1[]       = "#2e3440";
 static const char col_gray2[]       = "#2e3440";
 static const char col_gray3[]       = "#81a1c1";
