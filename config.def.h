@@ -15,8 +15,8 @@ static const int topbar             = 1;     /* 0 means bottom bar */
 static const double activeopacity   = 1.0f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity = 0.6f;   /* Window opacity when it's inactive (0 <= opacity <= 1) */
 static       Bool bUseOpacity       = True;     /* Starts with opacity on any unfocused windows */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=13" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=13";
+static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=10" };
+static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
 static const char col_gray1[]       = "#2e3440";
 static const char col_gray2[]       = "#2e3440";
 static const char col_gray3[]       = "#81a1c1";
@@ -85,15 +85,19 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("kitty --class floating --override=background_opacity=0 -e pulsemixer") },
-	{ MODKEY,                       XK_n,      spawn,          SHCMD("kitty --class floating --override=background_opacity=0 -e ncmpcpp") },
-	{ MODKEY,                       XK_backslash,spawn,        SHCMD("kitty --class floating --override=background_opacity=0") },
-  { MODKEY,                       XK_F5,      spawn,          SHCMD("feh --bg-fill --randomize --recursive ~/Pictures/cars/")},
-  { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("hsetroot -solid '#000000'")},
+	{ MODKEY,                       XK_m,      spawn,          SHCMD("kitty --class floating -e pulsemixer") },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("kitty --class floating -e ncmpcpp") },
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("kitty --class floating -e calcurse") },
+	{ MODKEY,                       XK_backslash,spawn,        SHCMD("kitty --class floating") },
+  { MODKEY,                       XK_F5,     spawn,          SHCMD("feh --bg-fill --randomize --recursive ~/Pictures/Nord/")},
+  { MODKEY|ShiftMask,             XK_F5,     spawn,          SHCMD("hsetroot -solid '#000000'")},
   { MODKEY,                       XK_o,      spawn,          SHCMD("rofi -show drun")},
   { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("rofi -show emoji")},
   { MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("~/.config/rofi/scripts/rofi-beats")},
   { MODKEY,                       XK_c,      spawn,          SHCMD("~/.bin/eyedropper")},
+  { MODKEY,                       XK_t,      spawn,          SHCMD("~/.bin/keylight")},
+  { MODKEY,                       XK_u,      spawn,          SHCMD("~/.bin/lightness down")},
+  { MODKEY,                       XK_a,      spawn,          SHCMD("~/.bin/lightness up")},
   { MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("firefox-developer-edition")},
   { MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("thunar")},
   { MODKEY,                       XK_e,      spawn,          SHCMD("mailspring")},

@@ -1,4 +1,4 @@
-# install dwm dependecies
+### install dependecies
 ```
 sudo pacman -Fy
 ```
@@ -12,7 +12,7 @@ or
 sudo pacman -S libxft libxinerama
 ```
 
-# build dwm
+### build
 ```bash
 make && sudo make clean install
 ```
