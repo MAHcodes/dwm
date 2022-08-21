@@ -17,11 +17,11 @@ static const double inactiveopacity = 0.6f;   /* Window opacity when it's inacti
 static       Bool bUseOpacity       = True;     /* Starts with opacity on any unfocused windows */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
-static const char col_gray1[]       = "#2e3440";
-static const char col_gray2[]       = "#2e3440";
-static const char col_gray3[]       = "#81a1c1";
-static const char col_gray4[]       = "#2e3440";
-static const char col_cyan[]        = "#81a1c1";
+static const char col_gray1[]       = "#24273A";
+static const char col_gray2[]       = "#24273A";
+static const char col_gray3[]       = "#CAD3F5";
+static const char col_gray4[]       = "#24273A";
+static const char col_cyan[]        = "#CAD3F5";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -38,7 +38,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "firefoxdeveloperedition",  NULL,   NULL,         1 << 1,       0,           -1 },
 	{ "TelegramDesktop",  NULL,   NULL,         1 << 3,       0,           -1 },
 	{ "figma-linux",  NULL,   NULL,         1 << 4,       0,           -1 },
