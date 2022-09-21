@@ -41,9 +41,9 @@ static const Rule rules[] = {
 	{ "firefoxdeveloperedition",  NULL,   NULL,         1 << 1,       0,           -1 },
 	{ "TelegramDesktop",  NULL,   NULL,         1 << 3,       0,           -1 },
 	{ "figma-linux",  NULL,   NULL,         1 << 4,       0,           -1 },
-	{ "notion-app-enhanced",  NULL,   NULL,         1 << 6,       0,           -1 },
 	{ "Mailspring",  NULL,   NULL,         1 << 7,       0,           -1 },
 	{ "Uget-gtk",  NULL,   NULL,         1 << 8,       0,           -1 },
+	{ "jetbrains-studio",  NULL,   NULL,         1 << 6,       1,          -1 },
 	{ NULL,       "floating", NULL,       0,            1,           -1 },
 };
 
@@ -133,8 +133,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY|SECMODKEY,             XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY|SECMODKEY,             XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_comma,  tagmon,         {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
