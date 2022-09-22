@@ -17,11 +17,11 @@ static const double inactiveopacity = 0.6f;   /* Window opacity when it's inacti
 static       Bool bUseOpacity       = True;     /* Starts with opacity on any unfocused windows */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
-static const char col_gray1[]       = "#24273A";
-static const char col_gray2[]       = "#24273A";
-static const char col_gray3[]       = "#CAD3F5";
-static const char col_gray4[]       = "#24273A";
-static const char col_cyan[]        = "#CAD3F5";
+static const char col_gray1[]       = "#1E1E2E";
+static const char col_gray2[]       = "#1E1E2E";
+static const char col_gray3[]       = "#CDD6F4";
+static const char col_gray4[]       = "#1E1E2E";
+static const char col_cyan[]        = "#CDD6F4";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
