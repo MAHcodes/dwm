@@ -15,8 +15,8 @@ static const int topbar             = 1;     /* 0 means bottom bar */
 static const double activeopacity   = 1.0f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity = 0.6f;   /* Window opacity when it's inactive (0 <= opacity <= 1) */
 static       Bool bUseOpacity       = True;     /* Starts with opacity on any unfocused windows */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=10" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=10";
+static const char *fonts[]          = { "Azeret Mono:size=10" };
+static const char dmenufont[]       = "Azeret Mono:size=10";
 static const char col_gray1[]       = "#1E1E2E";
 static const char col_gray2[]       = "#1E1E2E";
 static const char col_gray3[]       = "#CDD6F4";
@@ -98,14 +98,14 @@ static Key keys[] = {
   { MODKEY,                       XK_o,      spawn,          SHCMD("rofi -show drun")},
   { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("rofi -show emoji")},
   { MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("~/.config/rofi/scripts/rofi-beats")},
-  { MODKEY,                       XK_c,      spawn,          SHCMD("~/.bin/eyedropper")},
-  { MODKEY,                       XK_t,      spawn,          SHCMD("~/.bin/keylight")},
-  { MODKEY|SECMODKEY,             XK_j,      spawn,          SHCMD("~/.bin/lightness down")},
-  { MODKEY|SECMODKEY,             XK_k,      spawn,          SHCMD("~/.bin/lightness up")},
-  { MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("~/.bin/volume toggle")},
-  { MODKEY|SECMODKEY,             XK_m,      spawn,          SHCMD("~/.bin/miccontrol toggle")},
-  { MODKEY|ControlMask,           XK_j,      spawn,          SHCMD("~/.bin/volume down")},
-  { MODKEY|ControlMask,           XK_k,      spawn,          SHCMD("~/.bin/volume up")},
+  { MODKEY,                       XK_c,      spawn,          SHCMD("~/.local/bin/eyedropper")},
+  { MODKEY,                       XK_t,      spawn,          SHCMD("~/.local/bin/keylight")},
+  { MODKEY|SECMODKEY,             XK_j,      spawn,          SHCMD("~/.local/bin/lightness down")},
+  { MODKEY|SECMODKEY,             XK_k,      spawn,          SHCMD("~/.local/bin/lightness up")},
+  { MODKEY|ControlMask,           XK_m,      spawn,          SHCMD("~/.local/bin/volume toggle")},
+  { MODKEY|SECMODKEY,             XK_m,      spawn,          SHCMD("~/.local/bin/miccontrol toggle")},
+  { MODKEY|ControlMask,           XK_j,      spawn,          SHCMD("~/.local/bin/volume down")},
+  { MODKEY|ControlMask,           XK_k,      spawn,          SHCMD("~/.local/bin/volume up")},
   { MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("firefox-developer-edition")},
   { MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("thunar")},
   { MODKEY,                       XK_e,      spawn,          SHCMD("mailspring")},
