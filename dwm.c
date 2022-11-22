@@ -252,6 +252,7 @@ static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
 static void togglescratch(const Arg *arg);
 static void toggleopacity(const Arg *arg);
+static void togglefullscr(const Arg *arg);
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
 static void unfocus(Client *c, int setfocus);
@@ -2152,6 +2153,13 @@ toggleopacity(const Arg *arg) {
 	for (Monitor* m = mons; m; m = m->next)
 		for (Client* c = m->clients; c; c = c->next)
 			opacity(c, (bUseOpacity && c != selmon->sel) ? inactiveopacity : activeopacity);
+}
+
+void
+togglefullscr(const Arg *arg)
+{
+  if(selmon->sel)
+    setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
 }
 
 void
