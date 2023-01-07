@@ -53,7 +53,7 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "kitty", "--title", scratchpadname };
+static const char *scratchpadcmd[] = { "kitty", "-o", "background_opacity=1", "--title", scratchpadname };
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
