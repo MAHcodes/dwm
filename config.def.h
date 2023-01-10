@@ -2,8 +2,6 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const int startwithgaps	    = 1;    	 /* 1 means gaps are used by default */
-static const unsigned int gappx     = 15;       /* default gap between windows in pixels */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
@@ -38,12 +36,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "firefoxdeveloperedition",  NULL,   NULL,         1 << 1,       0,           -1 },
-	{ "TelegramDesktop",  NULL,   NULL,         1 << 3,       0,           -1 },
-	{ "figma-linux",  NULL,   NULL,         1 << 4,       0,           -1 },
-	{ "Mailspring",  NULL,   NULL,         1 << 7,       0,           -1 },
+	{ "firefox",  NULL,   NULL,         1 << 1,       0,           -1 },
 	{ "Uget-gtk",  NULL,   NULL,         1 << 8,       0,           -1 },
-	{ "jetbrains-studio",  NULL,   NULL,         1 << 6,       1,          -1 },
 	{ NULL,       "floating", NULL,       0,            1,           -1 },
 };
 
@@ -111,10 +105,6 @@ static Key keys[] = {
 	{ MODKEY|SECMODKEY,             XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
-	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
-	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
-	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
