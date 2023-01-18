@@ -52,7 +52,6 @@ My Patches
 ----------
 This is in the order that I patched everything:
 - https://dwm.suckless.org/patches/alwayscenter/
-- https://dwm.suckless.org/patches/rotatestack/
 - https://dwm.suckless.org/patches/scratchpad/
 - https://dwm.suckless.org/patches/titlecolor/
 - https://dwm.suckless.org/patches/systray/
